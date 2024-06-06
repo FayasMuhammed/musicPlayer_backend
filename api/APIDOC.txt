@@ -1,0 +1,58 @@
+
+
+schema:AlbumModel
+
+Attributes:[id,title,year,director,language,created_date,updated_date,is_active]
+
+
+1)api for adding Album
+
+    url:http://127.0.0.1:8000/api/album/
+
+    method:post
+
+    body=title,year,director,language
+
+    authentication:nill
+
+2)api for listing Album
+
+    url:http://127.0.0.1:8000/api/album/
+
+    method:get
+
+    body=nil
+
+    authentication:nill
+
+3)api for retrieve an Album
+
+    url:http://127.0.0.1:8000/api/album/{id}/
+
+    method:get
+
+    body=nil
+
+    authentication:nill
+
+4)api for update an Album
+
+    url:http://127.0.0.1:8000/api/album/{id}/
+
+    method:put
+
+    body=title,year,director,language
+
+    authentication:nill
+
+5)api for deleting Album
+
+    url:http://127.0.0.1:8000/api/album/{id}/
+
+    method:delete
+
+    body=nill
+
+    authentication:nill
+
+=====================================================================================================================
