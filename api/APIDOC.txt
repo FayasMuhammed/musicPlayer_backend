@@ -15,7 +15,7 @@ Attributes:[id,title,year,director,language,created_date,updated_date,is_active]
 
     authentication:nill
 
-2)api for listing Album
+2)api for listing Album and track and review
 
     url:http://127.0.0.1:8000/api/album/
 
@@ -56,3 +56,129 @@ Attributes:[id,title,year,director,language,created_date,updated_date,is_active]
     authentication:nill
 
 =====================================================================================================================
+
+schema=TrackModel
+
+Attributes=id,title,singers,genre,duration,track_number,album,created_date,updated_date,is_active
+
+6)api for adding a track 
+
+    url=http://127.0.0.1:8000/api/album/{id}/add_track/
+
+    method=get
+
+    body=[title,singers,genre,duration,track_number]
+
+    authentication=nil
+
+7)api for retrieve a track
+
+    url=http://127.0.0.1:8000/api/track/{id}/
+
+    method=get
+
+    body=nil
+
+    authentication=nil
+
+8)api for updating a track
+
+    url=http://127.0.0.1:8000/api/track/{id}/
+
+    method=put
+
+    body={
+  "album": "Star Boy",
+  "title": "hills",
+  "singers": "weekend",
+  "genre": "R & B",
+  "duration": "2:00",
+  "track_number": "1",
+  "created_date": "2024-06-07T04:19:32.214090Z",
+  "updated_date": "2024-06-07T04:19:32.214090Z",
+  "is_active": true
+}
+
+    body=nil
+
+9)api for deleting a track
+
+    url=http://127.0.0.1:8000/api/track/{id}/
+
+    method=delete
+
+    body=nil
+
+    authentication=nil
+
+=========================================================================================================
+
+schema=User
+
+Attributes=id,username,password,email
+
+10)api for register a username
+
+    url=http://127.0.0.1:8000/api/reg/
+
+    method=post
+
+    body=[username,password,email]
+
+    authentication=nil
+
+11)api for getting token
+
+    url=http://127.0.0.1:8000/api/token/
+
+    method=post
+
+    body=[username,password,email]
+
+    authentication=nil
+
+=======================================================================================================================
+
+schema=review_model
+
+Attributes=id,comment,rating,user,album,created_date,updated_date,is_active
+
+12)api for adding a review
+
+    url=http://127.0.0.1:8000/api/review_add/1/
+
+    method=post
+
+    body=[comment,rating]
+
+    authentication=token authentication
+
+13)api for updating a review
+
+    url=http://127.0.0.1:8000/api/review/1/
+
+    method=put
+
+    body={
+  "album": "AlbumModel object (1)",
+  "user": "Gazza",
+  "comment": "nice one",
+  "rating": 5,
+  "created_date": "2024-06-11T19:17:38.778131Z",
+  "updated_date": "2024-06-11T19:17:38.778131Z",
+  "is_active": true
+}
+
+    authentication=token authentication
+
+14)api for deleting a review
+
+    url=http://127.0.0.1:8000/api/review/1/
+
+    method=delete
+
+    body=nill
+
+    authentication=token authentication
+
+==========================================================================================================
